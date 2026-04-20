@@ -59,45 +59,45 @@
 :root {
   --radius: 0.25rem;
 
-  /* Kayoze luxe palette - deep maroon + antique gold (brand) */
-  --background: oklch(0.22 0.09 25);
-  --foreground: oklch(0.95 0.02 85);
+  /* Kayoze luxe palette - charcoal base, maroon accent, antique gold hero */
+  --background: oklch(0.16 0.012 30);
+  --foreground: oklch(0.95 0.018 85);
 
-  --ink: oklch(0.16 0.07 25);
-  --ivory: oklch(0.96 0.014 85);
-  --gold: oklch(0.74 0.14 82);
-  --gold-soft: oklch(0.62 0.11 78);
-  --maroon: oklch(0.32 0.13 25);
-  --maroon-deep: oklch(0.22 0.09 25);
+  --ink: oklch(0.1 0.008 30);
+  --ivory: oklch(0.96 0.018 85);
+  --gold: oklch(0.78 0.14 82);
+  --gold-soft: oklch(0.66 0.11 78);
+  --maroon: oklch(0.34 0.12 22);
+  --maroon-deep: oklch(0.24 0.1 22);
 
-  --card: oklch(0.27 0.1 25);
-  --card-foreground: oklch(0.95 0.02 85);
-  --popover: oklch(0.24 0.09 25);
-  --popover-foreground: oklch(0.95 0.02 85);
+  --card: oklch(0.2 0.014 30);
+  --card-foreground: oklch(0.95 0.018 85);
+  --popover: oklch(0.18 0.012 30);
+  --popover-foreground: oklch(0.95 0.018 85);
 
-  --primary: oklch(0.74 0.14 82);
-  --primary-foreground: oklch(0.18 0.08 25);
+  --primary: oklch(0.78 0.14 82);
+  --primary-foreground: oklch(0.14 0.01 30);
 
-  --secondary: oklch(0.3 0.1 25);
-  --secondary-foreground: oklch(0.95 0.02 85);
+  --secondary: oklch(0.34 0.12 22);
+  --secondary-foreground: oklch(0.95 0.018 85);
 
-  --muted: oklch(0.3 0.08 25);
-  --muted-foreground: oklch(0.78 0.04 80);
+  --muted: oklch(0.24 0.014 30);
+  --muted-foreground: oklch(0.74 0.02 80);
 
-  --accent: oklch(0.74 0.14 82);
-  --accent-foreground: oklch(0.18 0.08 25);
+  --accent: oklch(0.78 0.14 82);
+  --accent-foreground: oklch(0.14 0.01 30);
 
-  --destructive: oklch(0.55 0.2 28);
+  --destructive: oklch(0.58 0.22 25);
   --destructive-foreground: oklch(0.98 0 0);
 
-  --border: oklch(0.55 0.12 78 / 0.28);
-  --input: oklch(0.4 0.1 25 / 0.6);
-  --ring: oklch(0.74 0.14 82);
+  --border: oklch(0.5 0.05 60 / 0.22);
+  --input: oklch(0.32 0.02 40 / 0.55);
+  --ring: oklch(0.78 0.14 82);
 }
 
 .dark {
-  --background: oklch(0.22 0.09 25);
-  --foreground: oklch(0.95 0.02 85);
+  --background: oklch(0.16 0.012 30);
+  --foreground: oklch(0.95 0.018 85);
 }
 
 @layer base {
