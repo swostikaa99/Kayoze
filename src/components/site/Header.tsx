@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/kayoze-logo.jpg";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -30,8 +31,8 @@ export function Header() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10 h-20 flex items-center justify-between">
-        <Link to="/" className="font-display text-2xl tracking-[0.35em] gold-text">
-          KAYOZE
+        <Link to="/" className="flex items-center" aria-label="Kayoze home">
+          <img src={logo} alt="Kayoze" className="h-9 lg:h-10 w-auto object-contain" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-10">

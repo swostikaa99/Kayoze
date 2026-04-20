@@ -59,43 +59,45 @@
 :root {
   --radius: 0.25rem;
 
-  /* Kayoze luxe palette - dark obsidian + warm gold */
-  --background: oklch(0.14 0.008 60);
-  --foreground: oklch(0.94 0.012 80);
+  /* Kayoze luxe palette - deep maroon + antique gold (brand) */
+  --background: oklch(0.22 0.09 25);
+  --foreground: oklch(0.95 0.02 85);
 
-  --ink: oklch(0.09 0.006 60);
+  --ink: oklch(0.16 0.07 25);
   --ivory: oklch(0.96 0.014 85);
-  --gold: oklch(0.78 0.13 78);
-  --gold-soft: oklch(0.65 0.09 75);
+  --gold: oklch(0.74 0.14 82);
+  --gold-soft: oklch(0.62 0.11 78);
+  --maroon: oklch(0.32 0.13 25);
+  --maroon-deep: oklch(0.22 0.09 25);
 
-  --card: oklch(0.18 0.01 60);
-  --card-foreground: oklch(0.94 0.012 80);
-  --popover: oklch(0.16 0.01 60);
-  --popover-foreground: oklch(0.94 0.012 80);
+  --card: oklch(0.27 0.1 25);
+  --card-foreground: oklch(0.95 0.02 85);
+  --popover: oklch(0.24 0.09 25);
+  --popover-foreground: oklch(0.95 0.02 85);
 
-  --primary: oklch(0.78 0.13 78);
-  --primary-foreground: oklch(0.12 0.008 60);
+  --primary: oklch(0.74 0.14 82);
+  --primary-foreground: oklch(0.18 0.08 25);
 
-  --secondary: oklch(0.22 0.01 60);
-  --secondary-foreground: oklch(0.94 0.012 80);
+  --secondary: oklch(0.3 0.1 25);
+  --secondary-foreground: oklch(0.95 0.02 85);
 
-  --muted: oklch(0.22 0.008 60);
-  --muted-foreground: oklch(0.68 0.015 75);
+  --muted: oklch(0.3 0.08 25);
+  --muted-foreground: oklch(0.78 0.04 80);
 
-  --accent: oklch(0.78 0.13 78);
-  --accent-foreground: oklch(0.12 0.008 60);
+  --accent: oklch(0.74 0.14 82);
+  --accent-foreground: oklch(0.18 0.08 25);
 
-  --destructive: oklch(0.6 0.22 25);
+  --destructive: oklch(0.55 0.2 28);
   --destructive-foreground: oklch(0.98 0 0);
 
-  --border: oklch(0.28 0.012 70 / 0.6);
-  --input: oklch(0.28 0.012 70 / 0.5);
-  --ring: oklch(0.78 0.13 78);
+  --border: oklch(0.55 0.12 78 / 0.28);
+  --input: oklch(0.4 0.1 25 / 0.6);
+  --ring: oklch(0.74 0.14 82);
 }
 
 .dark {
-  --background: oklch(0.14 0.008 60);
-  --foreground: oklch(0.94 0.012 80);
+  --background: oklch(0.22 0.09 25);
+  --foreground: oklch(0.95 0.02 85);
 }
 
 @layer base {
@@ -114,8 +116,8 @@
     font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
     background-image:
-      radial-gradient(ellipse at top, oklch(0.2 0.02 70 / 0.6), transparent 60%),
-      radial-gradient(ellipse at bottom, oklch(0.16 0.02 70 / 0.4), transparent 70%);
+      radial-gradient(ellipse at top, oklch(0.32 0.12 25 / 0.7), transparent 60%),
+      radial-gradient(ellipse at bottom, oklch(0.18 0.08 25 / 0.6), transparent 70%);
   }
 
   h1, h2, h3, h4, .font-display {
