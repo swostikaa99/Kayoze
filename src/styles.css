@@ -116,8 +116,9 @@
     font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
     background-image:
-      radial-gradient(ellipse at top, oklch(0.32 0.12 25 / 0.7), transparent 60%),
-      radial-gradient(ellipse at bottom, oklch(0.18 0.08 25 / 0.6), transparent 70%);
+      radial-gradient(ellipse 80% 60% at 50% -10%, oklch(0.34 0.12 22 / 0.55), transparent 70%),
+      radial-gradient(ellipse 60% 50% at 90% 100%, oklch(0.24 0.1 22 / 0.4), transparent 70%),
+      radial-gradient(ellipse 50% 40% at 10% 80%, oklch(0.2 0.02 60 / 0.5), transparent 70%);
   }
 
   h1, h2, h3, h4, .font-display {
