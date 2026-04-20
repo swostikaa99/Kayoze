@@ -1,13 +1,14 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Facebook, Mail, Phone, MapPin } from "lucide-react";
+import logo from "@/assets/kayoze-logo.jpg";
 
 export function Footer() {
   return (
     <footer className="border-t border-border mt-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 pt-20 pb-10 grid lg:grid-cols-4 gap-14">
         <div>
-          <Link to="/" className="font-display text-2xl tracking-[0.35em] gold-text">
-            KAYOZE
+          <Link to="/" className="inline-flex items-center" aria-label="Kayoze home">
+            <img src={logo} alt="Kayoze" className="h-10 w-auto object-contain" />
           </Link>
           <p className="mt-5 text-sm text-muted-foreground leading-relaxed max-w-xs">
             Bespoke menswear and custom tailoring crafted in the heart of Kathmandu, delivered worldwide.
