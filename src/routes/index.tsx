@@ -50,8 +50,9 @@ function HomePage() {
           alt="Master tailor crafting a bespoke jacket"
           width={1920}
           height={1080}
-          className="absolute inset-0 w-full h-full object-cover opacity-45"
+          className="hero-img-animated absolute inset-0 w-full h-full object-cover opacity-45"
         />
+        <div className="hero-aurora"><span /></div>
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/40 to-background" />
 
         <div className="relative z-10 text-center px-6 max-w-4xl">
