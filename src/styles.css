@@ -197,3 +197,64 @@
 .delay-200 { animation-delay: 0.2s; }
 .delay-300 { animation-delay: 0.3s; }
 .delay-500 { animation-delay: 0.5s; }
+
+/* Animated hero background */
+@keyframes hero-drift {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(-2%, -1%, 0) scale(1.06); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+.hero-img-animated {
+  animation: hero-drift 22s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes aurora-1 {
+  0%, 100% { transform: translate3d(-10%, -10%, 0) rotate(0deg); }
+  50%      { transform: translate3d(10%, 5%, 0) rotate(40deg); }
+}
+@keyframes aurora-2 {
+  0%, 100% { transform: translate3d(10%, 10%, 0) rotate(0deg); }
+  50%      { transform: translate3d(-8%, -6%, 0) rotate(-35deg); }
+}
+@keyframes aurora-3 {
+  0%, 100% { transform: translate3d(0%, 5%, 0) scale(1); }
+  50%      { transform: translate3d(5%, -8%, 0) scale(1.15); }
+}
+.hero-aurora { position: absolute; inset: -20%; pointer-events: none; overflow: hidden; }
+.hero-aurora::before,
+.hero-aurora::after,
+.hero-aurora > span {
+  content: "";
+  position: absolute;
+  display: block;
+  border-radius: 9999px;
+  filter: blur(80px);
+  opacity: 0.55;
+  mix-blend-mode: screen;
+}
+.hero-aurora::before {
+  width: 60vmax; height: 60vmax;
+  left: -10%; top: -20%;
+  background: radial-gradient(circle, color-mix(in oklab, var(--color-gold) 55%, transparent), transparent 60%);
+  animation: aurora-1 18s ease-in-out infinite;
+}
+.hero-aurora::after {
+  width: 55vmax; height: 55vmax;
+  right: -10%; bottom: -20%;
+  background: radial-gradient(circle, oklch(0.34 0.12 22 / 0.7), transparent 60%);
+  animation: aurora-2 24s ease-in-out infinite;
+}
+.hero-aurora > span {
+  width: 45vmax; height: 45vmax;
+  left: 30%; top: 20%;
+  background: radial-gradient(circle, color-mix(in oklab, var(--color-gold-soft) 40%, transparent), transparent 60%);
+  animation: aurora-3 20s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-img-animated,
+  .hero-aurora::before,
+  .hero-aurora::after,
+  .hero-aurora > span { animation: none; }
+}
