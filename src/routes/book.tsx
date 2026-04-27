@@ -8,16 +8,32 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/book")({
   head: () => ({
     meta: [
-      { title: "Book a Consultation — Kayoze" },
-      { name: "description", content: "Schedule a private bespoke consultation at our Kathmandu atelier or via video call. Begin your Kayoze commission today." },
+      { title: "Kayoze" },
+      {
+        name: "description",
+        content:
+          "Schedule a private bespoke consultation at our Kathmandu atelier or via video call. Begin your Kayoze commission today.",
+      },
       { property: "og:title", content: "Book a Consultation — Kayoze" },
-      { property: "og:description", content: "Begin your Kayoze bespoke journey with a private consultation." },
+      {
+        property: "og:description",
+        content: "Begin your Kayoze bespoke journey with a private consultation.",
+      },
     ],
   }),
   component: BookPage,
 });
 
-const services = ["Bespoke Suit", "Three-Piece Suit", "Woolen Jacket", "Bandi Coat", "Custom Shirt", "Overcoat", "Tuxedo / Formalwear", "Other"];
+const services = [
+  "Bespoke Suit",
+  "Three-Piece Suit",
+  "Woolen Jacket",
+  "Bandi Coat",
+  "Custom Shirt",
+  "Overcoat",
+  "Tuxedo / Formalwear",
+  "Other",
+];
 
 function BookPage() {
   const [sending, setSending] = useState(false);
@@ -65,21 +81,32 @@ function BookPage() {
             </div>
             <div className="border border-[color:var(--color-gold)]/30 p-6 bg-card/30">
               <p className="text-[0.7rem] uppercase tracking-[0.28em] gold-text">Concierge</p>
-              <p className="mt-3 text-sm text-muted-foreground">Need help choosing? Speak with our atelier directly.</p>
-              <a href="tel:+9779702691187" className="mt-3 block font-display text-xl">+977 970 269 1187</a>
+              <p className="mt-3 text-sm text-muted-foreground">
+                Need help choosing? Speak with our atelier directly.
+              </p>
+              <a href="tel:+9779702691187" className="mt-3 block font-display text-xl">
+                +977 970 269 1187
+              </a>
             </div>
           </aside>
 
           {/* Form */}
-          <form onSubmit={onSubmit} className="lg:col-span-2 border border-border p-8 lg:p-12 bg-card/30 space-y-8">
+          <form
+            onSubmit={onSubmit}
+            className="lg:col-span-2 border border-border p-8 lg:p-12 bg-card/30 space-y-8"
+          >
             {/* Mode */}
             <div>
-              <span className="text-[0.7rem] uppercase tracking-[0.28em] text-muted-foreground">Consultation Type</span>
+              <span className="text-[0.7rem] uppercase tracking-[0.28em] text-muted-foreground">
+                Consultation Type
+              </span>
               <div className="grid grid-cols-2 gap-3 mt-3">
-                {([
-                  { id: "atelier", t: "At the Atelier", d: "Durbar Marg, Kathmandu" },
-                  { id: "virtual", t: "Virtual", d: "Video consultation" },
-                ] as const).map((o) => (
+                {(
+                  [
+                    { id: "atelier", t: "At the Atelier", d: "Durbar Marg, Kathmandu" },
+                    { id: "virtual", t: "Virtual", d: "Video consultation" },
+                  ] as const
+                ).map((o) => (
                   <button
                     key={o.id}
                     type="button"
@@ -109,22 +136,30 @@ function BookPage() {
             <div className="grid sm:grid-cols-2 gap-5">
               <Field label="Preferred date" name="date" type="date" required />
               <label className="block">
-                <span className="text-[0.7rem] uppercase tracking-[0.28em] text-muted-foreground">Service of interest *</span>
+                <span className="text-[0.7rem] uppercase tracking-[0.28em] text-muted-foreground">
+                  Service of interest *
+                </span>
                 <select
                   name="service"
                   required
                   className="mt-2 w-full bg-transparent border-b border-border focus:border-[color:var(--color-gold)] py-3 text-foreground outline-none transition-colors"
                 >
-                  <option value="" className="bg-background">Select...</option>
+                  <option value="" className="bg-background">
+                    Select...
+                  </option>
                   {services.map((s) => (
-                    <option key={s} value={s} className="bg-background">{s}</option>
+                    <option key={s} value={s} className="bg-background">
+                      {s}
+                    </option>
                   ))}
                 </select>
               </label>
             </div>
 
             <label className="block">
-              <span className="text-[0.7rem] uppercase tracking-[0.28em] text-muted-foreground">Notes (optional)</span>
+              <span className="text-[0.7rem] uppercase tracking-[0.28em] text-muted-foreground">
+                Notes (optional)
+              </span>
               <textarea
                 name="notes"
                 rows={4}
@@ -133,7 +168,11 @@ function BookPage() {
               />
             </label>
 
-            <button type="submit" disabled={sending} className="btn-gold w-full sm:w-auto disabled:opacity-60">
+            <button
+              type="submit"
+              disabled={sending}
+              className="btn-gold w-full sm:w-auto disabled:opacity-60"
+            >
               <Calendar size={14} />
               {sending ? "Sending..." : "Request Appointment"}
             </button>
@@ -144,10 +183,23 @@ function BookPage() {
   );
 }
 
-function Field({ label, name, type = "text", required }: { label: string; name: string; type?: string; required?: boolean }) {
+function Field({
+  label,
+  name,
+  type = "text",
+  required,
+}: {
+  label: string;
+  name: string;
+  type?: string;
+  required?: boolean;
+}) {
   return (
     <label className="block">
-      <span className="text-[0.7rem] uppercase tracking-[0.28em] text-muted-foreground">{label}{required && " *"}</span>
+      <span className="text-[0.7rem] uppercase tracking-[0.28em] text-muted-foreground">
+        {label}
+        {required && " *"}
+      </span>
       <input
         type={type}
         name={name}

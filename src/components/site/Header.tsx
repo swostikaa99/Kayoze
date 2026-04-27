@@ -5,7 +5,7 @@ import logo from "@/assets/kayoze-logo.jpg";
 
 const nav = [
   { to: "/", label: "Home" },
-  { to: "/about", label: "Atelier" },
+  { to: "/about", label: "About" },
   { to: "/services", label: "Services" },
   { to: "/collections", label: "Collections" },
   { to: "/contact", label: "Contact" },
@@ -25,9 +25,7 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-background/85 backdrop-blur-xl border-b border-border"
-          : "bg-transparent"
+        scrolled ? "bg-[#630305] backdrop-blur-xl border-b border-border" : "bg-transparent"
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10 h-20 flex items-center justify-between">

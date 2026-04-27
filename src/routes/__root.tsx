@@ -2,6 +2,10 @@ import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/r
 import { Toaster } from "@/components/ui/sonner";
 
 import appCss from "../styles.css?url";
+import favicon32 from "@/assets/favicon-32x32-v2.png?url";
+import appleTouchIcon from "@/assets/apple-touch-icon-v4.png?url";
+import android192 from "@/assets/android-chrome-192x192-v4.png?url";
+import android512 from "@/assets/android-chrome-512x512-v4.png?url";
 
 function NotFoundComponent() {
   return (
@@ -30,8 +34,11 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Kayoze — Bespoke Menswear & Custom Tailoring" },
-      { name: "description", content: "Luxury custom tailoring crafted in Durbar Marg, Kathmandu — delivered worldwide." },
+      { title: "Kayoze" },
+      {
+        name: "description",
+        content: "Luxury custom tailoring crafted in Durbar Marg, Kathmandu — delivered worldwide.",
+      },
       { name: "author", content: "Kayoze Atelier" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -40,6 +47,29 @@ export const Route = createRootRoute({
       {
         rel: "stylesheet",
         href: appCss,
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        href: favicon32,
+      },
+      {
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+        href: appleTouchIcon,
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "192x192",
+        href: android192,
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "512x512",
+        href: android512,
       },
     ],
   }),
