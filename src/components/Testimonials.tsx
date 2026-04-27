@@ -14,28 +14,29 @@ const testimonials = [
       "The attention to detail at Kayoze is extraordinary. My bespoke suit fits perfectly, and the process was seamless despite the distance.",
     author: "James Richardson",
     location: "London, United Kingdom",
-    badge: "Heritage Client"
+    badge: "Heritage Client",
   },
   {
     quote:
       "Kayoze understands the nuance of traditional tailoring. My Bandi coat is a masterpiece of craft and cultural heritage.",
     author: "Arjun Thapa",
-    location: "Kathmandu, Nepal",
-    badge: "Official Collector"
+    location: "Kathmanduu, Nepal",
+    badge: "Official Collector",
   },
   {
     quote:
       "For my wedding, I wanted something singular. The three-piece suit from Kayoze didn't just fit me; it felt like a second skin.",
     author: "David Miller",
     location: "Sydney, Australia",
-    badge: "Wedding Commission"
+    badge: "Wedding Commission",
   },
   {
-    quote: "Superior craftsmanship from start to finish. The fabric selection is curated with an eye for timeless elegance.",
+    quote:
+      "Superior craftsmanship from start to finish. The fabric selection is curated with an eye for timeless elegance.",
     author: "Elena Rossi",
     location: "Milan, Italy",
-    badge: "Repeat Client"
-  }
+    badge: "Repeat Client",
+  },
 ];
 
 export function Testimonials() {
@@ -65,11 +66,11 @@ export function Testimonials() {
         </FadeIn>
 
         <FadeIn delay={0.15}>
-          <Carousel 
-            opts={{ 
+          <Carousel
+            opts={{
               align: "start",
-              loop: true 
-            }} 
+              loop: true,
+            }}
             className="w-full"
           >
             <CarouselContent className="-ml-4 md:-ml-8">
@@ -78,14 +79,21 @@ export function Testimonials() {
                   <div className="group relative h-full">
                     {/* Decorative Card Border/Glow */}
                     <div className="absolute inset-0 bg-gradient-to-br from-[color:var(--color-gold)]/20 via-transparent to-[color:var(--color-gold)]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl" />
-                    
+
                     <div className="relative flex flex-col h-full p-10 lg:p-14 border border-border bg-black/40 backdrop-blur-md hover:border-[color:var(--color-gold)]/40 transition-all duration-500 overflow-hidden">
                       {/* Top Bar */}
                       <div className="flex justify-between items-start mb-10">
-                        <Quote className="gold-text opacity-40 group-hover:opacity-100 transition-opacity duration-700" size={32} />
+                        <Quote
+                          className="gold-text opacity-40 group-hover:opacity-100 transition-opacity duration-700"
+                          size={32}
+                        />
                         <div className="flex gap-1">
                           {[1, 2, 3, 4, 5].map((s) => (
-                            <Star key={s} size={10} className="fill-[color:var(--color-gold)] text-[color:var(--color-gold)] opacity-50" />
+                            <Star
+                              key={s}
+                              size={10}
+                              className="fill-[color:var(--color-gold)] text-[color:var(--color-gold)] opacity-50"
+                            />
                           ))}
                         </div>
                       </div>
