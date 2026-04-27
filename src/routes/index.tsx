@@ -4,6 +4,7 @@ import { Layout } from "@/components/site/Layout";
 import { ArrowRight, Scissors, Ruler, Sparkles, Globe2 } from "lucide-react";
 import { Counter } from "@/components/ui/counter";
 import { FadeIn } from "@/components/ui/fade-in";
+import { Testimonials } from "@/components/Testimonials";
 
 import heroImg from "@/assets/hero-tailor.jpg";
 import aboutImg from "@/assets/about-portrait.jpg";
@@ -102,7 +103,9 @@ function HomePage() {
           height={1080}
           className="hero-img-animated absolute inset-0 w-full h-full object-cover opacity-70"
         />
-        <div className="hero-aurora"><span /></div>
+        <div className="hero-aurora">
+          <span />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/20 to-background/90" />
 
         <div className="relative z-10 text-center px-6 max-w-4xl">
@@ -167,9 +170,9 @@ function HomePage() {
             <div className="space-y-5 mt-8 text-muted-foreground leading-relaxed">
               <FadeIn delay={0.3}>
                 <p>
-                  Located in the prestigious Durbar Marg district of Kathmandu, Kayoze represents the
-                  epitome of luxury custom tailoring. Our master tailors bring decades of experience
-                  to every stitch.
+                  Located in the prestigious Durbar Marg district of Kathmandu, Kayoze represents
+                  the epitome of luxury custom tailoring. Our master tailors bring decades of
+                  experience to every stitch.
                 </p>
               </FadeIn>
               <FadeIn delay={0.4}>
@@ -312,24 +315,8 @@ function HomePage() {
         </div>
       </section>
 
-      {/* TESTIMONIAL */}
-      <section className="py-28 px-6">
-        <FadeIn>
-          <div className="mx-auto max-w-3xl text-center">
-            <span className="eyebrow">Client Stories</span>
-            <blockquote className="mt-10 font-display text-2xl md:text-3xl leading-relaxed italic text-foreground/90">
-              "The attention to detail at Kayoze is extraordinary. My bespoke suit fits perfectly,
-              and the virtual consultation made the process seamless despite the distance."
-            </blockquote>
-            <div className="mt-10">
-              <p className="font-display text-lg gold-text">James Richardson</p>
-              <p className="text-xs uppercase tracking-[0.28em] text-muted-foreground mt-1">
-                London, United Kingdom
-              </p>
-            </div>
-          </div>
-        </FadeIn>
-      </section>
+      {/* TESTIMONIALS */}
+      <Testimonials />
 
       {/* CTA */}
       <section className="px-6 pb-28">

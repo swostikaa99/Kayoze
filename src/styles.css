@@ -335,13 +335,6 @@
   .hero-aurora::before,
   .hero-aurora::after,
   .hero-aurora > span { animation: none; }
-  .animate-hero-kenburns { animation: none; }
-
-  .reveal-on-scroll {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
 }
 
 .reveal-on-scroll {
@@ -369,4 +362,16 @@
 
 .animate-hero-kenburns {
   animation: hero-kenburns 16s ease-in-out infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-kenburns {
+    animation: none;
+  }
+
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
