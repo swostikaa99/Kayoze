@@ -28,21 +28,25 @@ export function Footer() {
           <ul className="space-y-3 text-sm text-muted-foreground">
             <li>
               <Link to="/about" className="footer-link">
+                <span className="mr-2 text-[color:var(--color-gold)]">&gt;&gt;</span>
                 About
               </Link>
             </li>
             <li>
               <Link to="/services" className="footer-link">
+                <span className="mr-2 text-[color:var(--color-gold)]">&gt;&gt;</span>
                 Services
               </Link>
             </li>
             <li>
               <Link to="/collections" className="footer-link">
+                <span className="mr-2 text-[color:var(--color-gold)]">&gt;&gt;</span>
                 Collections
               </Link>
             </li>
             <li>
               <Link to="/book" className="footer-link">
+                <span className="mr-2 text-[color:var(--color-gold)]">&gt;&gt;</span>
                 Book Consultation
               </Link>
             </li>

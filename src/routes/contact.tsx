@@ -2,8 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import { PageHero } from "@/components/site/PageHero";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
+import { init, send } from "@emailjs/browser";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -27,14 +28,46 @@ export const Route = createFileRoute("/contact")({
 function ContactPage() {
   const [sending, setSending] = useState(false);
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const SERVICE_ID = (import.meta.env.VITE_EMAILJS_SERVICE_ID ?? "").trim();
+  const TEMPLATE_ID = (import.meta.env.VITE_EMAILJS_TEMPLATE_ID ?? "").trim();
+  const PUBLIC_KEY = (import.meta.env.VITE_EMAILJS_PUBLIC_KEY ?? "").trim();
+
+  useEffect(() => {
+    if (PUBLIC_KEY) init(PUBLIC_KEY);
+  }, []);
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const templateParams = {
+      name: String(formData.get("name") ?? ""),
+      email: String(formData.get("email") ?? ""),
+      phone: String(formData.get("phone") ?? ""),
+      country: String(formData.get("country") ?? ""),
+      message: String(formData.get("message") ?? ""),
+    };
+
     setSending(true);
-    setTimeout(() => {
+
+    try {
+      if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+        await new Promise((res) => setTimeout(res, 800));
+        toast.success("Message received (dev). Set VITE_EMAILJS_* env vars to enable real sends.");
+        form.reset();
+        return;
+      }
+
+      await send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
+      toast.success("Message sent — we'll reply within 24 hours.");
+      form.reset();
+    } catch (err) {
+      console.error("EmailJS send error:", err);
+      const msg = (err as any)?.message || (err as any)?.text || String(err);
+      toast.error(`Failed to send message: ${msg}`);
+    } finally {
       setSending(false);
-      toast.success("Message received. Our atelier will respond within 24 hours.");
-      (e.target as HTMLFormElement).reset();
-    }, 800);
+    }
   };
 
   return (

@@ -47,11 +47,6 @@ export function Testimonials() {
         <span />
       </div>
 
-      {/* Decorative background element */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl opacity-[0.04] pointer-events-none">
-        <Quote size={600} className="text-[color:var(--color-gold)] mx-auto" strokeWidth={0.5} />
-      </div>
-
       <div className="relative mx-auto max-w-7xl">
         <FadeIn>
           <div className="text-center mb-24">

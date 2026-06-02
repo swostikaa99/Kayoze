@@ -1,1 +1,0 @@
-const s="/assets/collection-jacket-DCDsKkfv.jpg",t="/assets/collection-shirt-Cl89_ghC.jpg",o="/assets/collection-overcoat-CPleqXeH.jpg",e="/assets/collection-tuxedo-CQznQ65Q.jpg";export{s as j,o,t as s,e as t};
